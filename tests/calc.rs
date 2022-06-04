@@ -16,3 +16,11 @@ fn calc_1() -> Result<(), Report> {
     assert!(v == 25);
     Ok(())
 }
+
+#[test]
+fn calc_2() -> Result<(), Report> {
+    let src = "let x = 5; (x + x) * x";
+    let v = eval(src)?;
+    assert!(v == 50);
+    Ok(())
+}

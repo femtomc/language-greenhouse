@@ -110,8 +110,6 @@ fn parser() -> impl Parser<char, Expr, Error = Simple<char>> {
     decl.then_ignore(end())
 }
 
-// REPL
-
 pub fn eval(src: &str) -> Result<Value, Report> {
     let mut interp = Interpreter::new();
     match parser().parse(src) {
