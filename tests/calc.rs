@@ -1,4 +1,6 @@
-use language_greenhouse::calc::*;
+use language_greenhouse::*;
 
 #[test]
-fn calc_0 -> Result<(), Report> {}
+fn calc_0() -> Result<(), Report> {
+    Ok(())
+}

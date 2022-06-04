@@ -16,6 +16,8 @@ enum Expr {
 
 pub use Expr::*;
 
+// An interpreter with eval.
+
 struct Interpreter {
     env: BTreeMap<Name, Value>,
 }

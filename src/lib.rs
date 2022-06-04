@@ -1,6 +1,10 @@
-mod utils;
-mod calc;
+#![doc = include_str!("../README.md")]
+#![warn(rustdoc::missing_doc_code_examples)]
 
+pub mod calc;
+mod utils;
+
+extern crate color_eyre;
 use wasm_bindgen::prelude::*;
 
 // When the `wee_alloc` feature is enabled, use `wee_alloc` as the global
@@ -10,7 +14,7 @@ use wasm_bindgen::prelude::*;
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
 #[wasm_bindgen]
-extern {
+extern "C" {
     fn alert(s: &str);
 }
 
@@ -18,3 +22,5 @@ extern {
 pub fn greet() {
     alert("Hello, language-greenhouse!");
 }
+
+pub use color_eyre::{eyre::bail, Report};
