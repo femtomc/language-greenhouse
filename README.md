@@ -8,6 +8,8 @@ For more information, please see [From definitional interpreters to native code 
 
 In general, each language module (see below) is self-contained -- featuring a language definition, an interpreter (which implements a small step semantics for the language), a parser for that language (I haven't defined the grammar, but refer to tests), and a JIT compiler using [cranelift](https://github.com/bytecodealliance/wasmtime/tree/main/cranelift).
 
+For each language module, take a look at the tests for example usage! In general, each test uses `eval` and `eval_staged` to denote the two evaluation paths (using the interpreter, or using the staged interpreter with code generation).
+
 ## Languages
 
 - [X] [Simple calculator language with an environment.](https://github.com/femtomc/language-greenhouse/tree/master/src/calc)
