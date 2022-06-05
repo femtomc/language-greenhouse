@@ -10,7 +10,7 @@ In general, each language module (see below) is self-contained -- featuring a la
 
 ## Languages
 
-- [X] Simple calculator language with an environment.
+- [X] [Simple calculator language with an environment.](https://github.com/femtomc/language-greenhouse/tree/master/src/calc)
 - [ ] Functions as first class objects.
 
 ---
