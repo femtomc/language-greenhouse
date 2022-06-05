@@ -24,3 +24,11 @@ fn calc_2() -> Result<(), Report> {
     assert!(v == 50);
     Ok(())
 }
+
+#[test]
+fn staged_calc_0() -> Result<(), Report> {
+    let src = "let x = 5; (x + x) * x";
+    let v = eval_staged(src)?;
+    assert!(v == 50);
+    Ok(())
+}
