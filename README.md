@@ -8,7 +8,7 @@ For more information, please see [From definitional interpreters to native code 
 
 ## Languages
 
-- [ ] Simple calculator language with an environment.
+- [X] Simple calculator language with an environment.
 - [ ] Functions as first class objects.
 
 ---
