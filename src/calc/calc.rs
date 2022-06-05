@@ -1,10 +1,8 @@
-use color_eyre::{eyre::bail, eyre::eyre, Report};
+use color_eyre::{eyre::eyre, Report};
 use cranelift::prelude::*;
 use cranelift_jit::{JITBuilder, JITModule};
 use cranelift_module::{DataContext, Linkage, Module};
 use std::collections::BTreeMap;
-use std::collections::HashMap;
-use std::slice;
 
 /////
 ///// A simple language, but quite unbreakable.

@@ -13,7 +13,11 @@ For each language module, take a look at the tests for example usage! In general
 ## Languages
 
 - [X] [Simple calculator language with an environment.](https://github.com/femtomc/language-greenhouse/tree/master/src/calc)
+  - [X] Interpreter
+  - [X] Compiler
 - [ ] Functions as first class objects.
+  - [X] Interpreter
+  - [ ] Compiler
 
 ---
 

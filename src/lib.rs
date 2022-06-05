@@ -2,6 +2,7 @@
 #![warn(rustdoc::missing_doc_code_examples)]
 
 pub mod calc;
+pub mod func;
 mod utils;
 
 extern crate color_eyre;
