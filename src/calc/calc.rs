@@ -162,26 +162,6 @@ impl StagedInterpreter {
         }
     }
 
-    /// Create a zero-initialized data section.
-    pub fn create_data(&mut self, name: &str, contents: Vec<u8>) -> Result<&[u8], String> {
-        // The steps here are analogous to `compile`, except that data is much
-        // simpler than functions.
-        self.data_ctx.define(contents.into_boxed_slice());
-        let id = self
-            .module
-            .declare_data(name, Linkage::Export, true, false)
-            .map_err(|e| e.to_string())?;
-
-        self.module
-            .define_data(id, &self.data_ctx)
-            .map_err(|e| e.to_string())?;
-        self.data_ctx.clear();
-        self.module.finalize_definitions();
-        let buffer = self.module.get_finalized_data(id);
-        // TODO: Can we move the unsafe into cranelift?
-        Ok(unsafe { slice::from_raw_parts(buffer.0, buffer.1) })
-    }
-
     pub unsafe fn eval(mut self, e: Expr) -> Result<Value, Report> {
         let int = self.module.target_config().pointer_type();
         self.ctx.func.signature.returns.push(AbiParam::new(int));
